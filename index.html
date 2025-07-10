@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Олександр Саєнко – Ювелірна Мрія</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: radial-gradient(#2b2b2b, #111);
+      overflow-x: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: white;
+      clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+      opacity: 0;
+      animation: sparkle 6s infinite ease-in-out;
+    }
+
+    @keyframes sparkle {
+      0%, 95%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+      45%, 50%, 55% { opacity: 0.9; transform: scale(1) rotate(180deg); }
+    }
+
+    header {
+      background: #d4af37;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.4em;
+      z-index: 1;
+      position: relative;
+    }
+
+    .main {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .main h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .main p {
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 5px solid #d4af37;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .card strong {
+      color: #ffdd99;
+      font-size: 1.2em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background: #1a1a1a;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Зірки -->
+  <div class="stars">
+    <script>
+      for (let i = 0; i < 30; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.animationDelay = Math.random() * 6 + "s";
+        document.querySelector(".stars").appendChild(star);
+      }
+    </script>
+  </div>
+
+  <header>
+    Олександр Саєнко – Ювелірна Мрія
+  </header>
+
+  <div class="main">
+    <h1>Сяйво, що залишає слід</h1>
+    <p>Наша команда — це серце кожної прикраси.</p>
+
+    <!-- Про нас -->
+    <div class="card">
+      <strong>Про нас</strong><br>
+      Ювелірна майстерня “Саєнко” працює з 2013 року у місті Київ,  
+      за адресою <strong>вул. Коптєва, 5</strong>.<br><br>
+      Ми спеціалізуємося на виготовленні унікальних прикрас із золота, срібла  
+      та дорогоцінного каміння. Усі вироби створюються вручну з великою любов’ю  
+      і точністю. Наша мета — створити не просто прикрасу, а історію, що передається.
+    </div>
+
+    <!-- Команда -->
+    <div class="card">
+      <strong>Ірина Васюк – технолог</strong><br>
+      Відповідає за точність сплаву, хімічну стабільність та якість золота.
+    </div>
+
+    <div class="card">
+      <strong>Микита Полтава – майстер лиття</strong><br>
+      Працює з формами для відливу ювелірних заготовок. Його точність – гарантія довговічності прикрас.
+    </div>
+
+    <div class="card">
+      <strong>Олена Літвин – дизайнер</strong><br>
+      Створює ескізи, натхненні природою, космосом і стародавніми орнаментами.
+    </div>
+
+    <div class="card">
+      <strong>Дмитро Сяйний – ювелір</strong><br>
+      Працює з діамантами та смарагдами, надає виробам фінальний блиск.
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Олександр Саєнко. Усі права захищено.
+  </footer>
+
+</body>
+</html>
